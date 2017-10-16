@@ -13,7 +13,7 @@
 
 **주의 : 등록한 OAuth client ID, OAuth client secret 과 획득한 AccessToken 을 잘 보관하시기 바랍니다.**
 
-획득한 AccessToken 은 Thing+ 운영 정책에 따라 변경될 수 있습니다.
+획득한 AccessToken 과 이에 포함된 정보는 Thing+ 운영 정책에 따라 변경될 수 있습니다.
 
 [Thing+ 기본 가이드 문서를 찾으려면 이 문서를 참조하십시오.](../README.md)
 
