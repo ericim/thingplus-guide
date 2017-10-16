@@ -20,4 +20,5 @@ Authorization Code Grant 방식을 사용할 때 authorize scopes 에 아래 sco
 | service-read       | Service Read                     | /services | 사용자가 등록한 서비스 읽기 권한
 | site-read          | Site Read                        | /site | 사용자가 등록한 사이트 읽기 권한
 | billing-read       | Billing Read                     | /billings | (TBD) 사용자 청구 정보 읽기 권한
+
 **TBD** : 현재 사용가능하지 않음
