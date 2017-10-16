@@ -18,8 +18,8 @@ Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Re
 
 [Thing+ REST API 기술 문서를 찾으려면 https://thingplus.api-docs.io 를 참조하십시오.](https://thingplus.api-docs.io/)
 
-## 차례
-Thing+ OAuth2 가이드를 쉽게 이해할 수 있도록 차례를 제공합니다.
+## 목차
+Thing+ OAuth2 가이드를 쉽게 이해할 수 있도록 목차를 제공합니다.
 * [OAuth2 란 무엇인가?](./OAuth2Guide_kr.md#oauth2-란-무엇인가)
 * [단계1. Thing+ OAuth2 인증 진행 - OAuth client 등록](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---oauth-client-등록)
 * [단계2-1. Thing+ OAuth2 인증 진행 - Authorization Code Grant](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---authorization-code-grant)
