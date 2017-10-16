@@ -22,8 +22,8 @@ Authorization Code Grant 방식을 사용할 때 authorize scopes 에 아래 sco
 | gateway-read       | /gateways, /controlActuator | **사용자의 게이트웨이, 센서, 컨트롤 액츄에이터**에 대해 **읽기 권한**을 지정합니다.
 | gateway-update     | /gateways, /manageGateway,  /controlActuator | 사용자의 **게이트웨이 관리 권한**을 포함하여 **게이트웨이, 디바이스, 센서, 컨트롤 액츄에이터**에 대해 **읽기, 업데이트 권한**을 지정합니다.
 | timeline-read      | /timelines | **사용자의 타임라인 읽기 권한**을 지정합니다.
-| tag                | /tags | **사용자의 태그 생성, 읽기, 업데이트, 삭제 권한**을 지정합니다.
-| tag-read           | /tags | **사용자의 태그 읽기 권한**을 지정합니다.
+| tag                | /tags | **사용자의 태그**에 대해 **생성, 읽기, 업데이트, 삭제 권한**을 지정합니다.
+| tag-read           | /tags | **사용자의 태그**에 대해 **읽기 권한**을 지정합니다.
 | rule               | /rules, /pushDevices | (TBD) **사용자의 규칙**에 대해 **읽기, 업데이트, 삭제 권한**을 지정합니다.
 | rule-read          | /rules | **사용자의 규칙**에 대해 **읽기 권한**을 지정합니다.
 | service-read       | /services | **사용자가 등록 되어있는 서비스**에 대해 **읽기 권한**을 지정합니다.
