@@ -1,5 +1,5 @@
 # Thing+ OAuth2 가이드
-모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 그리고 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있습니다.
+모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야 합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 그리고 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있습니다.
 
 이처럼 Thing+ OAuth2 는 OAuth client와 OAuth client secret 를 등록하고 AccessToken 을 획득하여 Thing+ REST API 를 사용할 수 있게 합니다. 그리고 Thing+ Cloud 에 등록 및 저장된 사용자 리소스에 접근 할 때 사용자 비밀번호를 요청하지 않고도 외부 어플리케이션에서 편리하게 접근 할 수 있도록 합니다.
 
@@ -20,14 +20,14 @@ Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Re
 
 ## 차례
 Thing+ OAuth2 가이드를 쉽게 이해할 수 있도록 차례를 제공합니다.
-* [1. OAuth2 란 무엇인가?]()
-* [2. Thing+ OAuth2 인증 진행 - OAuth client 등록]()
-* [3. Thing+ OAuth2 인증 진행 - Authorization Code Grant]()
-* [4. Thing+ OAuth2 인증 진행 - Resource Owner Password Credentials Grant]()
-* [5. Thing+ OAuth2 인증 진행 - Application Header]()
+* [단계1. OAuth2 란 무엇인가?](./OAuth2Guide_kr.md#oauth2-란-무엇인가)
+* [단계2. Thing+ OAuth2 인증 진행 - OAuth client 등록](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---oauth-client-등록)
+* [단계3. Thing+ OAuth2 인증 진행 - Authorization Code Grant](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---authorization-code-grant)
+* [단계4. Thing+ OAuth2 인증 진행 - Resource Owner Password Credentials Grant](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---resource-owner-password-credentials-grant)
+* [단계5. Thing+ OAuth2 인증 진행 - Application Header](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---application-header)
 
 ## OAuth2 란 무엇인가?
-Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
+Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. OAuth2는 인증을 위한 산업 표준 프로토콜입니다. OAuth2 는 웹 어플리케이션, 데스크톱 어플리케이션, 모바일 폰, 개인 임베디드 디바이스에 권한을 부여하기 위한 단순성에 중점을 두어 클라이언트 개발자가 더욱 편리하게 인증을 사용할 수 있게 합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
 
 ![OAuth](./images/oauth2.png "OAuth")
 
