@@ -5,11 +5,11 @@ Authorization Code Grant 방식을 사용할 때 authorize scopes 에 아래 sco
 ## Authorization Scopes
 
 |     Scope          |                Name              | resources (API) |                          Description
-| ------------------ | --------------------------- | --- | ------------------------------------------------------------
+| ------------------ | -------------------------------- | --- | ------------------------------------------------------------
 | (no scope)         |                                  | | 어떤 scopes 도 액세스 할 수 없습니다.
 | user-profile       | User Profile Read and Update     | users/me, /changePassword | (TBD) 사용자 프로필 읽기 및 업데이트 권한
 | user-profile-read  | User Profile Read                | users/me | 사용자 프로필 읽기 권한
-| gateway            | Gateway Ceate/Read/Update/Delete | /gateways, /registerGateway, /registerGatewayKey, /manageGateway, /controlActuator, /sensorTypes, /sensorDrivers, /gatewayModels | (TBD) 권한이 있는 사용자에 대한 게이트웨이 / 디바이스 / 센서 등록, 읽기, 업데이트, 삭제 권한
+| gateway            | Gateway Ceate / Read / Update / Delete | /gateways, /registerGateway, /registerGatewayKey, /manageGateway, /controlActuator, /sensorTypes, /sensorDrivers, /gatewayModels | (TBD) 권한이 있는 사용자에 대한 게이트웨이 / 디바이스 / 센서 등록, 읽기, 업데이트, 삭제 권한
 | gateway-read       | Gateway Read                     | /gateways, /controlActuator | 권한이 있는 사용자에 대한 게이트웨이 / 디바이스 / 센서 / 제어 액츄에이터 읽기
 | gateway-update     | Gateway Read/Update              | /gateways, /manageGateway, /controlActuator | 권한이 있는 사용자에 대한 게이트웨이 / 디바이스 / 센서 / 제어 액츄에이터 읽기, 업데이트 권한, 게이트웨이 관리 권한
 | timeline-read      | Timeline Read                    | /timelines | 사용자 타임라인 읽기 권한
