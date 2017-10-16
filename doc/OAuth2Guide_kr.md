@@ -1,12 +1,12 @@
 # Thing+ OAuth2 가이드
 Thing+ OAuth2 는 OAuth client 를 등록하고 AccessToken 을 획득하여 Thing+ REST API 를 사용할 수 있게 합니다. OAuth2 를 이용하면 Thing+ Cloud 사용자 리소스에 접근 할 때 비밀번호를 요청하지 않고 외부 어플리케이션에서 접근 할 수 있습니다.
 
-Thing+ 는 AccessToken 획득에 **Authorization Code 방식** 또는 **Resource Owner Password Credentials 방식**을 지원하고 있습니다.
+Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Resource Owner Password Credentials Grant 방식**을 지원하고 있습니다.
 
 |획득 방식|설명
 |---|----
-|Authorization Code 방식|특정 사용자에게 리소스 접근권한을 위임받기 원하는 경우
-|Resource Owner Password Credentials 방식|관리자(Admin)의 권한으로 관리 범위의 리소스에 접근하기 원하는 경우
+|Authorization Code Grant|특정 사용자에게 리소스 접근권한을 위임받기 원하는 경우
+|Resource Owner Password Credentials Grant|관리자(Admin)의 권한으로 관리 범위의 리소스에 접근하기 원하는 경우
 
 **주의 : 등록한 OAuth client ID, OAuth client secret 과 획득한 AccessToken 을 잘 보관하시기 바랍니다.**
 
@@ -53,6 +53,8 @@ OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도�
 #### Step2. Thing+ authClients API 호출하기
 
 **Postman** 을 설치하셨다면 툴을 실행하고, **Postman Interceptor** 가 웹브라우저로부터 쿠키를 가져올 수 있도록 **On** 한 상태에서 설정할 값을 입력한 다음 API를 호출합니다.
+
+다른 HTTPS POST API 도구를 설치하셨다면 Thing+ Portal 에 사용자 계정을 로그인 한 뒤 다음 API 를 호출합니다.
 
 [Postman 사용에 도움을 얻으려면 Getting Started with the Thing+ REST APIs 이 문서를 참조하십시오.](./GettingStarted_authToken.md)
 
