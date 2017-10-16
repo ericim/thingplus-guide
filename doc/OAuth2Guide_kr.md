@@ -37,9 +37,11 @@ Thing+ 는 **실제 사용자를 위한 Commercial** 과 **실험적 기능이 �
 ### OAuth client 등록하기
 첫 번째 단계는 Thing+ Cloud 에 **OAuth client** 를 등록하는 것입니다.
 
-이 문서는 **Postman**을 기준으로 설명하고 있으므로 **Postman** 사용을 추천합니다.
-* [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
-* [Postman Interceptor](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo?hl=en)
+OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도구가 필요합니다.
+* [Google Chrome](https://www.google.co.kr/chrome/browser/desktop) : Thing+ Portal에 로그인할 때 사용합니다.
+* [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) : 원하는 HTTPS API를 호출할 때 사용하는 Google Chrome App입니다.
+* [Postman Interceptor](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo?hl=en) : Thing+ Portal에 로그인 했을 때 생성된 쿠키를 Postman에서 공유할 수 있도록 지원하는 Google Chrome Extension입니다.
+위의 도구를 사용하지 않더라도 Thing+ Portal에서 쿠키를 공유할 수 있는 HTTPS POST API 도구를 사용하시면 됩니다.
 
 아래의 툴 또는 다른 유틸리티를 사용하셔도 무방합니다.
 * [Fiddler](http://www.telerik.com/fiddler)
@@ -91,7 +93,7 @@ Content-Type : application/json
 ### Authorization Code 방식으로 AccessToken 획득하기
 `AccessToken` 을 획득하기 위해 `Authorization Code` 가 필요합니다. Authorization Code 방식으로 획득한 `AccessToken` 은 **15일간 유효**합니다. 아래 지침을 따르십시오.
 
-#### Authorization Code 획득
+#### Step1. Authorization Code 획득
 웹 브라우저로 아래 URI 을 GET 하여 수락 후 redirect_uri Query에 부여된 `Authorization Code` 를 획득 합니다.
 
 > Commercial Thing+ REST API 스펙
@@ -99,7 +101,6 @@ Content-Type : application/json
 URI : https://api.thingplus.net/v2/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}
 Method : GET
 ```
-
 > 예시
 ```
 https://api.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=code&redirect_uri=https://thingplus.net
@@ -110,7 +111,6 @@ https://api.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=
 URI : https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}
 Method : GET
 ```
-
 > 예시
 ```
 https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=code&redirect_uri=https://thingplus.net
@@ -128,7 +128,6 @@ https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id=daliworks&respon
 ```
 REDIRECT URI : {REDIRECT_URI}/?code={AUTHORIZATION_CODE}
 ```
-
 > 예시
 ```
 https://thingplus.net/?code=FKr1INPriNvGcMEC
@@ -138,8 +137,8 @@ https://thingplus.net/?code=FKr1INPriNvGcMEC
 
  [Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token)
 
-#### Authorization Code 로 AccessToken 획득
-Postman 에서 다음 API를 이용하여 `AccessToken` 을 획득합니다. `Authorization Code` 는 **10분 간 유효**하며, `AccessToken` 을 획득하면 해당 `Authorization Code` 는 만료됩니다.
+#### Step2. Authorization Code 로 AccessToken 획득
+다음 API를 이용하여 `AccessToken` 을 획득합니다. `Authorization Code` 는 **10분 간 유효**하며, `AccessToken` 을 획득하면 해당 `Authorization Code` 는 만료됩니다.
 > Commercial Thing+ REST API 스펙
 ```
 URI : https://api.thingplus.net/v2/oauth2/token
@@ -188,7 +187,7 @@ grant_type : authorization_code
 
 [MD5 hash 에 대한 자세한 내용은 이 웹페이지를 참조하십시오.](https://github.com/blueimp/JavaScript-MD5)
 
-#### MD5 hash 생성
+#### Step1. MD5 hash 생성
 Mac OS X 또는 Linux 에서 아래 명령어를 이용해 `MD5 hash` 를 생성합니다.
 
 > Mac OS X
@@ -203,8 +202,8 @@ $ echo -n <b>Your_Password<b> | md5sum
 bbff9cb88fcd3e847923e1bd96aa578f
 ```
 
-#### MD5 hash 로 AccessToken 획득
-Postman 에서 다음 API를 이용하여 `AccessToken` 을 획득합니다.
+#### Step2. MD5 hash 로 AccessToken 획득
+다음 API를 이용하여 `AccessToken` 을 획득합니다.
 > Commercial Thing+ REST API 스펙
 ```
 URI : https://api.thingplus.net/v2/oauth2/token
