@@ -39,6 +39,8 @@ Thing+ 는 **실제 사용자를 위한 Commercial** 과 **실험적 기능이 �
 
 [Thing+ authClients API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/create-authclients)
 
+#### Step1. API 호출을 위한 HTTPS API 호출 도구 설치
+
 OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도구가 필요합니다.
 * [Google Chrome](https://www.google.co.kr/chrome/browser/desktop) : Thing+ Portal에 로그인할 때 사용합니다.
 * [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) : 원하는 HTTPS API를 호출할 때 사용하는 Google Chrome App입니다.
@@ -47,6 +49,8 @@ OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도�
 위의 도구를 사용하지 않더라도 Thing+ Portal에서 쿠키를 공유할 수 있는 다음과 같은 HTTPS POST API 도구를 사용하시면 됩니다.
 * [Fiddler](http://www.telerik.com/fiddler)
 * [DHC](https://client.restlet.com)
+
+#### Step2. Thing+ authClients API 호출하기
 
 **Postman** 을 설치하셨다면 툴을 실행하고, **Postman Interceptor** 가 웹브라우저로부터 쿠키를 가져올 수 있도록 **On** 한 상태에서 설정할 값을 입력한 다음 API를 호출합니다.
 
