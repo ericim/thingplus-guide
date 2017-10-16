@@ -1,5 +1,7 @@
 # Thing+ OAuth2 가이드
-Thing+ OAuth2 는 OAuth client 를 등록하고 AccessToken 을 획득하여 Thing+ REST API 를 사용할 수 있게 합니다. OAuth2 를 이용하면 Thing+ Cloud 사용자 리소스에 접근 할 때 비밀번호를 요청하지 않고 외부 어플리케이션에서 접근 할 수 있습니다.
+모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 그리고 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있습니다.
+
+이처럼 Thing+ OAuth2 는 OAuth client와 OAuth client secret 를 등록하고 AccessToken 을 획득하여 Thing+ REST API 를 사용할 수 있게 합니다. 그리고 Thing+ Cloud 에 등록 및 저장된 사용자 리소스에 접근 할 때 사용자 비밀번호를 요청하지 않고도 외부 어플리케이션에서 편리하게 접근 할 수 있도록 합니다.
 
 Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Resource Owner Password Credentials Grant 방식**을 지원하고 있습니다.
 
@@ -16,6 +18,14 @@ Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Re
 
 [Thing+ REST API 기술 문서를 찾으려면 https://thingplus.api-docs.io 를 참조하십시오.](https://thingplus.api-docs.io/)
 
+## 차례
+Thing+ OAuth2 가이드를 쉽게 이해할 수 있도록 차례를 제공합니다.
+* [1. OAuth2 란 무엇인가?]()
+* [2. Thing+ OAuth2 인증 진행 - OAuth client 등록]()
+* [3. Thing+ OAuth2 인증 진행 - Authorization Code Grant]()
+* [4. Thing+ OAuth2 인증 진행 - Resource Owner Password Credentials Grant]()
+* [5. Thing+ OAuth2 인증 진행 - Application Header]()
+
 ## OAuth2 란 무엇인가?
 Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
 
@@ -23,8 +33,8 @@ Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사�
 
 [OAuth2 를 더 자세히 알아보려면 이 웹사이트를 참조하십시오.](https://oauth.net/2)
 
-## Thing+ OAuth2 인증 진행하기
-### 선결 요건
+## Thing+ OAuth2 인증 진행 - OAuth client 등록
+### 요구사항
 Thing+ 는 **실제 사용자를 위한 Commercial** 과 **실험적 기능이 추가 되어있는 Sandbox** 를 지원합니다. 이를 시작하기 전에 다음이 필요합니다.
 > Commercial 사용시
 * [Thing+ Portal](https://thingplus.net) 회원가입. Thing+ 는 개인 사용자를 위한 무료 계정 생성과 비즈니스 고객을 위한 계정 생성을 지원합니다.
@@ -95,6 +105,7 @@ Content-Type : application/json
 
 [scopes 에 대해 자세한 설명이 필요하시면 이 문서를 참조하십시오.](./AuthorizationScopes_kr.md)
 
+## Thing+ OAuth2 인증 진행 - Authorization Code Grant
 ### Authorization Code Grant 방식으로 AccessToken 획득하기
 `AccessToken` 을 획득하기 위해 `Authorization Code` 가 필요합니다. Authorization Code 방식으로 획득한 `AccessToken` 은 **15일간 유효**합니다. 아래 지침을 따르십시오.
 
@@ -185,6 +196,7 @@ grant_type : authorization_code
 }
 ```
 
+## Thing+ OAuth2 인증 진행 - Resource Owner Password Credentials Grant
 ### Resource Owner Password Credentials Grant 방식으로 AccessToken 획득하기
 `AccessToken` 을 획득하기 위해 Thing+ Portal 사용자 암호로부터 생성한 `MD5 hash` 가 필요합니다. Resource Owner Password Credentials 방식으로 획득한 `AccessToken`은 **90일간 유효**합니다. 아래 지침을 따르십시오.
 
@@ -250,6 +262,7 @@ password : bbff9cb88fcd3e847923e1bd96aa578f
 }
 ```
 
+## Thing+ OAuth2 인증 진행 - Application Header
 ### Header 에 AccessToken 등록
 `AccessToken` 은 Thing+ REST API 를 호출할 때 권한 인증을 위해 **Header**에 반드시 있어야합니다.
 
