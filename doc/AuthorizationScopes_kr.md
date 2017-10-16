@@ -5,7 +5,7 @@ Authorization Code Grant 방식을 사용할 때 authorize scopes 에 아래 sco
 ## Authorization Scopes
 
 |     Scope          |                Name              | resources (API) |                          Description
-| - | - | - | -
+| ------------------ | - | - | -
 | (no scope)         |                                  | | 어떤 scopes 도 액세스 할 수 없습니다.
 | user-profile       | User Profile Read and Update     | users/me, /changePassword | (TBD) 사용자 프로필 읽기 및 업데이트 권한
 | user-profile-read  | User Profile Read                | users/me | 사용자 프로필 읽기 권한
