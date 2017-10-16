@@ -12,9 +12,9 @@ Thing+ 는 AccessToken 획득에 **Authorization Code 방식** 또는 **Resource
 
 획득한 AccessToken 은 Thing+ 운영 정책에 따라 변경될 수 있습니다.
 
-Thing+ 기본 가이드 문서를 찾으려면 [http://support.thingplus.net](http://support.thingplus.net/) 를 참조하십시오.
+[Thing+ 기본 가이드 문서를 찾으려면 이 문서를 참조하십시오.](../README.md) 
 
-Thing+ REST API 기술 문서를 찾으려면 [https://thingplus.api-docs.io](https://thingplus.api-docs.io/) 를 참조하십시오.
+[Thing+ REST API 기술 문서를 찾으려면 https://thingplus.api-docs.io 를 참조하십시오.](https://thingplus.api-docs.io/) 
 
 ## OAuth2 란 무엇인가?
 Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
