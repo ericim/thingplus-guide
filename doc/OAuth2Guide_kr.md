@@ -12,9 +12,9 @@ Thing+ 는 AccessToken 획득에 **Authorization Code 방식** 또는 **Resource
 
 획득한 AccessToken 은 Thing+ 운영 정책에 따라 변경될 수 있습니다.
 
-[Thing+ 기본 가이드 문서를 찾으려면 이 문서를 참조하십시오.](../README.md) 
+[Thing+ 기본 가이드 문서를 찾으려면 이 문서를 참조하십시오.](../README.md)
 
-[Thing+ REST API 기술 문서를 찾으려면 https://thingplus.api-docs.io 를 참조하십시오.](https://thingplus.api-docs.io/) 
+[Thing+ REST API 기술 문서를 찾으려면 https://thingplus.api-docs.io 를 참조하십시오.](https://thingplus.api-docs.io/)
 
 ## OAuth2 란 무엇인가?
 Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
@@ -37,17 +37,17 @@ Thing+ 는 **실제 사용자를 위한 Commercial** 과 **실험적 기능이 �
 ### OAuth client 등록하기
 첫 번째 단계는 Thing+ Cloud 에 **OAuth client** 를 등록하는 것입니다.
 
+[Thing+ authClients API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/create-authclients)
+
 OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도구가 필요합니다.
 * [Google Chrome](https://www.google.co.kr/chrome/browser/desktop) : Thing+ Portal에 로그인할 때 사용합니다.
 * [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) : 원하는 HTTPS API를 호출할 때 사용하는 Google Chrome App입니다.
 * [Postman Interceptor](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo?hl=en) : Thing+ Portal에 로그인 했을 때 생성된 쿠키를 Postman에서 공유할 수 있도록 지원하는 Google Chrome Extension입니다.
-위의 도구를 사용하지 않더라도 Thing+ Portal에서 쿠키를 공유할 수 있는 HTTPS POST API 도구를 사용하시면 됩니다.
-
-아래의 툴 또는 다른 유틸리티를 사용하셔도 무방합니다.
+위의 도구를 사용하지 않더라도 Thing+ Portal에서 쿠키를 공유할 수 있는 HTTPS POST API 도구를 사용하시면 됩니다. 다음과 같은 도구를 사용하셔도 됩니다.
 * [Fiddler](http://www.telerik.com/fiddler)
 * [DHC](https://client.restlet.com)
 
-**Postman** 을 설치하셨다면 툴을 실행하고, **Postman Interceptor** 가 웹브라우저로부터 세션을 가져올 수 있도록 **On** 한 상태에서 설정할 값을 입력한 다음 API를 호출합니다.
+**Postman** 을 설치하셨다면 툴을 실행하고, **Postman Interceptor** 가 웹브라우저로부터 쿠키를 가져올 수 있도록 **On** 한 상태에서 설정할 값을 입력한 다음 API를 호출합니다.
 
 [Postman 사용에 도움을 얻으려면 Getting Started with the Thing+ REST APIs 이 문서를 참조하십시오.](./GettingStarted_authToken.md)
 
@@ -88,10 +88,10 @@ Content-Type : application/json
 
 [scopes 에 대해 자세한 설명이 필요하시면 이 문서를 참조하십시오.](./AuthorizationScopes_kr.md)
 
-[Thing+ authClients API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/create-authclients)
-
 ### Authorization Code 방식으로 AccessToken 획득하기
 `AccessToken` 을 획득하기 위해 `Authorization Code` 가 필요합니다. Authorization Code 방식으로 획득한 `AccessToken` 은 **15일간 유효**합니다. 아래 지침을 따르십시오.
+
+[Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token)
 
 #### Step1. Authorization Code 획득
 웹 브라우저로 아래 URI 을 GET 하여 수락 후 redirect_uri Query에 부여된 `Authorization Code` 를 획득 합니다.
@@ -135,9 +135,7 @@ https://thingplus.net/?code=FKr1INPriNvGcMEC
 
  Sandbox Thing+ Potal 에 로그인이 안되는 경우 **브라우저 쿠키를 삭제**하십시오.
 
- [Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token)
-
-#### Step2. Authorization Code Grant 로 AccessToken 획득
+#### Step2. Authorization Code 로 AccessToken 획득
 다음 API를 이용하여 `AccessToken` 을 획득합니다. `Authorization Code` 는 **10분 간 유효**하며, `AccessToken` 을 획득하면 해당 `Authorization Code` 는 만료됩니다.
 > Commercial Thing+ REST API 스펙
 ```
@@ -180,10 +178,10 @@ grant_type : authorization_code
 }
 ```
 
-[Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token)
-
 ### Resource Owner Password Credentials 방식으로 AccessToken 획득하기
 `AccessToken` 을 획득하기 위해 Thing+ Portal 사용자 암호로부터 생성한 `MD5 hash` 가 필요합니다. Resource Owner Password Credentials 방식으로 획득한 `AccessToken`은 **90일간 유효**합니다. 아래 지침을 따르십시오.
+
+[Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token-1)
 
 [MD5 hash 에 대한 자세한 내용은 이 웹페이지를 참조하십시오.](https://github.com/blueimp/JavaScript-MD5)
 
@@ -245,8 +243,6 @@ password : bbff9cb88fcd3e847923e1bd96aa578f
 }
 ```
 
-[Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token-1)
-
 ### Header 에 AccessToken 등록
 `AccessToken` 은 Thing+ REST API 를 호출할 때 권한 인증을 위해 **Header**에 반드시 있어야합니다.
 
@@ -255,6 +251,6 @@ Header 에 **Authorization 필드**를 추가하고, **token_type**과 획득한
 Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI3MzY3IiwiY2xpZW50SWQiOiJkYWxpd29ya3M1MTIiLCJpYXQiOjE1MDc3MTA4NDYsImV4cCI6MTUwOTAwNjg0Nn0.wmr6MdEDJo5qk4i5EYn34epxRmn9BQq_Nt74AfNCSMc
 ```
 
-[Thing+ OAuth2 API 에러에 대한 자세한 설명을 보시려면 이 문서를 참조하십시오.](./AuthorizationErrors_kr.md)
+[Thing+ OAuth2 API Errors 에 대한 자세한 설명을 보시려면 이 문서를 참조하십시오.](./AuthorizationErrors_kr.md)
 
 기타 추가 지원이 필요하시면 contact@thingplus.net 로 요청하시기 바랍니다. 감사합니다.
