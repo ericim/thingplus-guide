@@ -118,20 +118,14 @@ Content-Type : application/json
 ```
 URI : https://api.thingplus.net/v2/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}
 Method : GET
-```
-> 예시
-```
-https://api.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=code&redirect_uri=https://thingplus.net
+Example : https://api.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=code&redirect_uri=https://thingplus.net
 ```
 
 > Sandbox
 ```
 URI : https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}
 Method : GET
-```
-> 예시
-```
-https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=code&redirect_uri=https://thingplus.net
+Example : https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=code&redirect_uri=https://thingplus.net
 ```
 
 > URI Query 파라미터
@@ -145,10 +139,7 @@ https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id=daliworks&respon
 > 사용자가 요청을 수락하면 URI 에 "code" 가 포함된 redirect_uri 사이트로 리디렉션됩니다.
 ```
 REDIRECT URI : {REDIRECT_URI}/?code={AUTHORIZATION_CODE}
-```
-> 예시
-```
-https://thingplus.net/?code=FKr1INPriNvGcMEC
+Example : https://thingplus.net/?code=FKr1INPriNvGcMEC
 ```
 
  Sandbox Thing+ Potal 에 로그인이 안되는 경우 **브라우저 쿠키를 삭제**하십시오.
