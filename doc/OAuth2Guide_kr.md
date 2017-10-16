@@ -22,9 +22,9 @@ Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Re
 Thing+ OAuth2 가이드를 쉽게 이해할 수 있도록 차례를 제공합니다.
 * [OAuth2 란 무엇인가?](./OAuth2Guide_kr.md#oauth2-란-무엇인가)
 * [단계1. Thing+ OAuth2 인증 진행 - OAuth client 등록](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---oauth-client-등록)
-* [단계2. Thing+ OAuth2 인증 진행 - Authorization Code Grant](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---authorization-code-grant)
-* [단계3. Thing+ OAuth2 인증 진행 - Resource Owner Password Credentials Grant](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---resource-owner-password-credentials-grant)
-* [단계4. Thing+ OAuth2 인증 진행 - Application Header](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---application-header)
+* [단계2-1. Thing+ OAuth2 인증 진행 - Authorization Code Grant](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---authorization-code-grant)
+* [단계2-2. Thing+ OAuth2 인증 진행 - Resource Owner Password Credentials Grant](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---resource-owner-password-credentials-grant)
+* [단계3. Thing+ OAuth2 인증 진행 - Application Header](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---application-header)
 
 ## OAuth2 란 무엇인가?
 Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. OAuth2는 인증을 위한 산업 표준 프로토콜입니다. OAuth2 는 웹 어플리케이션, 데스크톱 어플리케이션, 모바일 폰, 개인 임베디드 디바이스에 권한을 부여하기 위해 사용되는 산업 표준 프로토콜이며, 단순성에 중점을 두어 클라이언트 개발자가 더욱 편리하게 인증을 사용할 수 있게 합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
