@@ -1,5 +1,5 @@
 # Thing+ OAuth2 Authorization Scopes
-Thing+ OAuth2 Authorization Scopes 는 Thing+ OAuth2 AccessToken의 액세스 권한을 부여합니다. 액세스 부여 권한은 사용자 계정에 부여된 권한을 넘어설 수 없습니다.
+Thing+ OAuth2 Authorization Scopes 는 Thing+ OAuth2 AccessToken에 액세스 권한을 부여합니다. 액세스 부여 권한은 사용자 계정에 부여된 권한을 넘어설 수 없습니다.
 
 Authorization Code Grant 방식을 사용할 때 authorize scopes 에 아래 scope 접근 권한을 부여하면 됩니다.
 ## Authorization Scopes
