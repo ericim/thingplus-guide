@@ -137,7 +137,7 @@ https://thingplus.net/?code=FKr1INPriNvGcMEC
 
  [Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token)
 
-#### Step2. Authorization Code 로 AccessToken 획득
+#### Step2. Authorization Code Grant 로 AccessToken 획득
 다음 API를 이용하여 `AccessToken` 을 획득합니다. `Authorization Code` 는 **10분 간 유효**하며, `AccessToken` 을 획득하면 해당 `Authorization Code` 는 만료됩니다.
 > Commercial Thing+ REST API 스펙
 ```
@@ -254,9 +254,6 @@ Header 에 **Authorization 필드**를 추가하고, **token_type**과 획득한
 ```
 Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI3MzY3IiwiY2xpZW50SWQiOiJkYWxpd29ya3M1MTIiLCJpYXQiOjE1MDc3MTA4NDYsImV4cCI6MTUwOTAwNjg0Nn0.wmr6MdEDJo5qk4i5EYn34epxRmn9BQq_Nt74AfNCSMc
 ```
-
-## 끝으로
-이상으로 OAuth client 를 등록하고 **Authorization Code 방식** 또는 **Resource Owner Password Credentials Grant 방식** 으로 **AccessToken** 을 획득하는 방법에 대해 알아보았습니다. AccessToken 은 Thing+ REST API 를 사용할 때 반드시 필요하며 AccessToken 을 이용해 외부 어플리케이션에서 Thing+ Cloud 리소스에 접근할 수 있습니다.
 
 [Thing+ OAuth2 API 에러에 대한 자세한 설명을 보시려면 이 문서를 참조하십시오.](./AuthorizationErrors_kr.md)
 
