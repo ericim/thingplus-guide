@@ -1,14 +1,15 @@
 # Thing+ OAuth2 가이드
-모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야 합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 그리고 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 AccessToken 획득시 부여하는 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있습니다.
 
-이처럼 Thing+ OAuth2 는 OAuth client와 OAuth client secret 를 등록하고 AccessToken 을 획득하여 Thing+ REST API 를 사용할 수 있게 합니다. 그리고 Thing+ Cloud 에 등록 및 저장된 사용자 리소스에 접근 할 때 사용자 비밀번호를 요청하지 않고도 외부 어플리케이션에서 편리하게 접근 할 수 있도록 합니다.
+모든 개발자는 Thing+ REST API 을 이용한 개발을 하기 위해 Thing+ Portal 사용자 계정에 대한 OAuth Client 를 등록하고, 해당하는 OAuth Client 에 대해 AccessToken을 발급 받을 수 있습니다. OAuth Client 등록시 OAuth Client ID 와 OAuth Client Secret 을 사용자가 지정해서 등록할 수 있습니다. 그리고 등록한 OAuth Client 로 Authorization Code Grant 방식 또는 Resource Owner Password Credentials Grant 방식으로 AccessToken 을 획득할 수 있습니다. 획득한 AccessToken 은 Thing+ Cloud 에 접근하여 Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근에 사용됩니다. 또한 Authorization Code Grant 방식으로 획득한 AccessToken 은 Scopes 옵션을 지정하여 사용자 리소스 접근 권한을 사용자가 자유롭게 지정할 수 있습니다.
 
-Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Resource Owner Password Credentials Grant 방식**을 지원하고 있습니다.
+이러한 과정을 거쳐 Thing+ OAuth2 를 사용하면 Thing+ Portal 사용자 비밀번호를 요청하지 않고도 외부 애플리케이션에서 AccessToken 만으로 편리하게 사용자 리소스에 접근 할 수 있습니다. 또한 AccessToken 을 Grant 하는 방식에 따라 사용자 리소스 접근 권한을 관리할 수 있으므로 사용자 필요에 따라 OAuth Client 를 관리 할 수 있습니다.
 
-|획득 방식|설명
-|---|----
-|Authorization Code Grant|특정 사용자에게 리소스 접근권한을 위임받기 원하는 경우
-|Resource Owner Password Credentials Grant|관리자(Admin)의 권한으로 관리 범위의 리소스에 접근하기 원하는 경우
+현재 Thing+ 는 AccessToken 획득에 **Authorization Code Grant 방식** 또는 **Resource Owner Password Credentials Grant 방식**을 지원하고 있습니다.
+
+|획득 방식|유효 기간|설명
+|---|---|----
+|Authorization Code Grant|15일|특정 사용자에게 리소스 접근권한을 위임받기 원하는 경우
+|Resource Owner Password Credentials Grant|90일|관리자(Admin)의 권한으로 관리 범위의 리소스에 접근하기 원하는 경우
 
 **주의 : 등록한 OAuth client ID, OAuth client secret 과 획득한 AccessToken 을 잘 보관하시기 바랍니다.**
 
