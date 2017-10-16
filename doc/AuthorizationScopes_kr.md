@@ -1,5 +1,5 @@
 # Thing+ OAuth2 Authorization Scopes
-Thing+ OAuth2 Authorization Scopes 는 Authorization Code Grant 을 사용하여 Thing+ OAuth2 AccessToken 을 획득할 때 Thing+ OAuth2 AccessToken에 액세스 권한을 부여합니다. 액세스 부여 권한은 사용자 계정에 부여된 권한을 넘어설 수 없습니다. Scopes 는 User, Gateway, Timeline, Tag, Rule, Service, Site, Billing 8가지 액세스 권한에 대해 부여할 수 있으며 부여되지 않은 권한에 접근할 경우 액세스가 거부됩니다.
+Thing+ OAuth2 Authorization Scopes 는 Authorization Code Grant 을 사용하여 Thing+ OAuth2 AccessToken 을 획득할 때 Thing+ OAuth2 AccessToken에 액세스 권한을 부여합니다. 액세스 부여 권한은 사용자 계정에 부여된 권한을 넘어설 수 없습니다. Scopes 는 User, Gateway, Timeline, Tag, Rule, Service, Site, Billing 여덟 종류 액세스 권한을 부여할 수 있으며 권한을 넘어서서 사용자 리소스에 접근 할 경우 액세스가 거부됩니다.
 
 권장되는 기본 부여 권한은 user-profile-read, gateway-update, timeline-read, tag, rule-read, service-read 입니다. 만약 사용자 계정에 부여된 권한을 넘어선 추가 권한을 부여할 필요가 있으신 경우 contact@thingplus.net 로 요청하시기 바랍니다.
 
