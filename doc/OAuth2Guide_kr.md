@@ -1,5 +1,5 @@
 # Thing+ OAuth2 가이드
-모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야 합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 그리고 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있습니다.
+모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야 합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 이를 통해 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있도록 지원합니다.
 
 이처럼 Thing+ OAuth2 는 OAuth client와 OAuth client secret 를 등록하고 AccessToken 을 획득하여 Thing+ REST API 를 사용할 수 있게 합니다. 그리고 Thing+ Cloud 에 등록 및 저장된 사용자 리소스에 접근 할 때 사용자 비밀번호를 요청하지 않고도 외부 어플리케이션에서 편리하게 접근 할 수 있도록 합니다.
 
