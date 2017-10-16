@@ -35,7 +35,9 @@ Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사�
 
 ## 단계1. Thing+ OAuth2 인증 진행 - OAuth client 등록
 ### 요구사항
-Thing+ 는 **실제 사용자를 위한 Commercial** 과 **실험적 기능이 추가 되어있는 Sandbox** 를 지원합니다. 이를 시작하기 전에 다음이 필요합니다.
+Thing+ 는 **실제 사용자를 위한 Commercial** 과 **실험적 기능이 추가 되어있는 Sandbox** 를 지원합니다. Thing+ 에서는 추후 유료 고객을 위해 상용 서버를 운영하고, 일반 사용자를 위해서는 샌드박스 서버를 운영할 계획입니다. 개발시 참고해서 사용해주시기 바랍니다.
+
+OAuth client 등록을 시작하기 전에 다음이 필요합니다.
 > Commercial 사용시
 * [Thing+ Portal](https://thingplus.net) 회원가입. Thing+ 는 개인 사용자를 위한 무료 계정 생성과 비즈니스 고객을 위한 계정 생성을 지원합니다.
 * [Thing+ Portal](https://thingplus.net) 로그인
@@ -44,10 +46,10 @@ Thing+ 는 **실제 사용자를 위한 Commercial** 과 **실험적 기능이 �
 * [Thing+ Sandbox Portal](https://www.sandbox.thingplus.net) 회원가입. Thing+ 는 개발자를 위한 무료 계정 생성을 지원합니다.
 * [Thing+ Sandbox Portal](https://www.sandbox.thingplus.net) 로그인
 
+
+
 ### OAuth client 등록하기
 첫 번째 단계는 Thing+ Cloud 에 **OAuth client** 를 등록하는 것입니다.
-
-[Thing+ authClients API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/create-authclients)
 
 #### Step1. API 호출을 위한 HTTPS API 호출 도구 설치
 
@@ -65,6 +67,8 @@ OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도�
 **Postman** 을 설치하셨다면 툴을 실행하고, **Postman Interceptor** 가 웹브라우저로부터 쿠키를 가져올 수 있도록 **On** 한 상태에서 설정할 값을 입력한 다음 API를 호출합니다.
 
 다른 HTTPS POST API 도구를 설치하셨다면 Thing+ Portal 에 사용자 계정을 로그인 한 뒤 다음 API 를 호출합니다.
+
+[Thing+ authClients API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/create-authclients)
 
 [Postman 사용에 도움을 얻으려면 Getting Started with the Thing+ REST APIs 이 문서를 참조하십시오.](./GettingStarted_authToken.md)
 
