@@ -43,7 +43,8 @@ OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도�
 * [Google Chrome](https://www.google.co.kr/chrome/browser/desktop) : Thing+ Portal에 로그인할 때 사용합니다.
 * [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) : 원하는 HTTPS API를 호출할 때 사용하는 Google Chrome App입니다.
 * [Postman Interceptor](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo?hl=en) : Thing+ Portal에 로그인 했을 때 생성된 쿠키를 Postman에서 공유할 수 있도록 지원하는 Google Chrome Extension입니다.
-위의 도구를 사용하지 않더라도 Thing+ Portal에서 쿠키를 공유할 수 있는 HTTPS POST API 도구를 사용하시면 됩니다. 다음과 같은 도구를 사용하셔도 됩니다.
+
+위의 도구를 사용하지 않더라도 Thing+ Portal에서 쿠키를 공유할 수 있는 다음과 같은 HTTPS POST API 도구를 사용하시면 됩니다.
 * [Fiddler](http://www.telerik.com/fiddler)
 * [DHC](https://client.restlet.com)
 
