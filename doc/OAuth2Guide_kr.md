@@ -95,7 +95,7 @@ Content-Type : application/json
 
 [scopes 에 대해 자세한 설명이 필요하시면 이 문서를 참조하십시오.](./AuthorizationScopes_kr.md)
 
-### Authorization Code 방식으로 AccessToken 획득하기
+### Authorization Code Grant 방식으로 AccessToken 획득하기
 `AccessToken` 을 획득하기 위해 `Authorization Code` 가 필요합니다. Authorization Code 방식으로 획득한 `AccessToken` 은 **15일간 유효**합니다. 아래 지침을 따르십시오.
 
 [Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token)
@@ -185,7 +185,7 @@ grant_type : authorization_code
 }
 ```
 
-### Resource Owner Password Credentials 방식으로 AccessToken 획득하기
+### Resource Owner Password Credentials Grant 방식으로 AccessToken 획득하기
 `AccessToken` 을 획득하기 위해 Thing+ Portal 사용자 암호로부터 생성한 `MD5 hash` 가 필요합니다. Resource Owner Password Credentials 방식으로 획득한 `AccessToken`은 **90일간 유효**합니다. 아래 지침을 따르십시오.
 
 [Thing+ OAuth2Token API 를 자세히 알아보려면 이 문서를 참조하세요.](https://thingplus.api-docs.io/2.0/oauth2/oauth2token-1)
