@@ -253,7 +253,7 @@ Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI3MzY3
 ```
 
 ## 끝으로
-이상으로 OAuth client 를 등록하고 **Authorization Code 방식** 또는 **Resource Owner Password Credentials Grant 방식** 으로 **AccessToken** 을 획득하는 방법에 대해 알아보았습니다. AccessToken 은 Thing+ REST API 를 사용할 때 반드시 필요하며 AccessToken 을 이용해 외부 앱에서 Thing+ Cloud 리소스에 접근할 수 있습니다.
+이상으로 OAuth client 를 등록하고 **Authorization Code 방식** 또는 **Resource Owner Password Credentials Grant 방식** 으로 **AccessToken** 을 획득하는 방법에 대해 알아보았습니다. AccessToken 은 Thing+ REST API 를 사용할 때 반드시 필요하며 AccessToken 을 이용해 외부 어플리케이션에서 Thing+ Cloud 리소스에 접근할 수 있습니다.
 
 [Thing+ OAuth2 API 에러에 대한 자세한 설명을 보시려면 이 문서를 참조하십시오.](./AuthorizationErrors_kr.md)
 
