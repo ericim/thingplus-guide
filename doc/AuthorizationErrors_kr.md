@@ -143,7 +143,7 @@ client_id 또는 client_secret이 올바르지 않으면 코드명 incorrect_cli
 ```
 
 ## 액세스 토큰을 포함한 API 요청 에러
-#### 올바르지 않은 액세스 토큰
+### 올바르지 않은 액세스 토큰
 액세스 토큰이 유효하지 않거나 올바르지 않으면 JsonWebTokenError 가 발생합니다.
 ```json
 {
@@ -152,7 +152,7 @@ client_id 또는 client_secret이 올바르지 않으면 코드명 incorrect_cli
 }
 ```
 
-#### 올바르지 않은 서명
+### 올바르지 않은 서명
 Access 토큰을 생성하는 비밀 키가 변경되면 JsonWebTokenError 가 발생합니다.
 > 이 에러가 발생하면 사용자로부터 새로운 AccessToken 을 획득해야합니다.
 ```json
@@ -162,7 +162,7 @@ Access 토큰을 생성하는 비밀 키가 변경되면 JsonWebTokenError 가 �
 }
 ```
 
-#### 만료된 액세스 토큰
+### 만료된 액세스 토큰
 액세스 토큰이 만료되면 TokenExpiredError 가 발생합니다.
 ```json
 {
