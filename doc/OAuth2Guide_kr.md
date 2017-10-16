@@ -1,5 +1,5 @@
 # Thing+ OAuth2 가이드
-모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야 합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 그리고 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있습니다.
+모든 개발자는 Thing+ REST API 을 이용한 개발을 시작하기 전에 애플리케이션을 등록해야 합니다. 등록된 OAuth 애플리케이션에는 고유 OAuth Client ID 와 OAuth Client Secret 를 개발자가 등록하도록 되어있습니다. 그리고 등록된 고유 OAuth Client 를 통해 사용자 리소스 접근 권한이 부여된 AccessToken 을 획득할 수 있습니다. Gateway, Device, Sensor, SensorData 와 같은 사용자 리소스 접근 권한 또한 AccessToken 획득시 부여하는 Scopes 를 이용해 개발자가 자유롭게 변경 할 수 있습니다.
 
 이처럼 Thing+ OAuth2 는 OAuth client와 OAuth client secret 를 등록하고 AccessToken 을 획득하여 Thing+ REST API 를 사용할 수 있게 합니다. 그리고 Thing+ Cloud 에 등록 및 저장된 사용자 리소스에 접근 할 때 사용자 비밀번호를 요청하지 않고도 외부 어플리케이션에서 편리하게 접근 할 수 있도록 합니다.
 
@@ -27,7 +27,7 @@ Thing+ OAuth2 가이드를 쉽게 이해할 수 있도록 차례를 제공합니
 * [단계4. Thing+ OAuth2 인증 진행 - Application Header](./OAuth2Guide_kr.md#thing-oauth2-인증-진행---application-header)
 
 ## OAuth2 란 무엇인가?
-Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. OAuth2는 인증을 위한 산업 표준 프로토콜입니다. OAuth2 는 웹 어플리케이션, 데스크톱 어플리케이션, 모바일 폰, 개인 임베디드 디바이스에 권한을 부여하기 위한 단순성에 중점을 두어 클라이언트 개발자가 더욱 편리하게 인증을 사용할 수 있게 합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
+Thing+ 는 클라이언트 사용자 편의를 위해 **OAuth2** 인증을 사용합니다. OAuth2는 인증을 위한 산업 표준 프로토콜입니다. OAuth2 는 웹 어플리케이션, 데스크톱 어플리케이션, 모바일 폰, 개인 임베디드 디바이스에 권한을 부여하기 위해 사용되는 산업 표준 프로토콜이며, 단순성에 중점을 두어 클라이언트 개발자가 더욱 편리하게 인증을 사용할 수 있게 합니다. 아래 OAuth 2.0 flow 를 이해하시면 더 쉽게 Thing+ 를 이용한 개발을 할 수 있습니다.
 
 ![OAuth](./images/oauth2.png "OAuth")
 
@@ -68,14 +68,14 @@ OAuth Client 등록 API 호출을 위해 HTTPS API를 호출할 수 있는 도�
 
 [Postman 사용에 도움을 얻으려면 Getting Started with the Thing+ REST APIs 이 문서를 참조하십시오.](./GettingStarted_authToken.md)
 
-> Commercial Thing+ REST API 스펙
+> Commercial
 ```
 URI : https://api.thingplus.net/v2/authClients
 Method : POST
 Content-Type : application/json
 ```
 
-> Sandbox Thing+ REST API 스펙
+> Sandbox
 ```
 URI : https://api.sandbox.thingplus.net/v2/authClients
 Method : POST
@@ -114,7 +114,7 @@ Content-Type : application/json
 #### Step1. Authorization Code 획득
 웹 브라우저로 아래 URI 을 GET 하여 수락 후 redirect_uri Query에 부여된 `Authorization Code` 를 획득 합니다.
 
-> Commercial Thing+ REST API 스펙
+> Commercial
 ```
 URI : https://api.thingplus.net/v2/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}
 Method : GET
@@ -124,7 +124,7 @@ Method : GET
 https://api.thingplus.net/v2/oauth2/authorize?client_id=daliworks&response_type=code&redirect_uri=https://thingplus.net
 ```
 
-> Sandbox Thing+ REST API 스펙
+> Sandbox
 ```
 URI : https://api.sandbox.thingplus.net/v2/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}
 Method : GET
@@ -155,14 +155,14 @@ https://thingplus.net/?code=FKr1INPriNvGcMEC
 
 #### Step2. Authorization Code 로 AccessToken 획득
 다음 API를 이용하여 `AccessToken` 을 획득합니다. `Authorization Code` 는 **10분 간 유효**하며, `AccessToken` 을 획득하면 해당 `Authorization Code` 는 만료됩니다.
-> Commercial Thing+ REST API 스펙
+> Commercial
 ```
 URI : https://api.thingplus.net/v2/oauth2/token
 Method : POST
 Content-Type : x-www-form-urlencoded
 ```
 
-> Sandbox Thing+ REST API 스펙
+> Sandbox
 ```
 URI : https://api.sandbox.thingplus.net/v2/oauth2/token
 Method : POST
@@ -221,14 +221,14 @@ bbff9cb88fcd3e847923e1bd96aa578f
 
 #### Step2. MD5 hash 로 AccessToken 획득
 다음 API를 이용하여 `AccessToken` 을 획득합니다.
-> Commercial Thing+ REST API 스펙
+> Commercial
 ```
 URI : https://api.thingplus.net/v2/oauth2/token
 Method : POST
 Content-Type : x-www-form-urlencoded
 ```
 
-> Sandbox Thing+ REST API 스펙
+> Sandbox
 ```
 URI : https://api.sandbox.thingplus.net/v2/oauth2/token
 Method : POST
